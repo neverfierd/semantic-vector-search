@@ -1,0 +1,33 @@
+[project]
+name = "semantic-vector-search"
+version = "0.1.0"
+description = "Semantic vector search engine with spatial tree index and UI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.9",
+    "numpy>=2.4.6",
+    "plotly>=6.8.0",
+    "sentence-transformers>=3.0.0",
+    "streamlit>=1.57.0",
+    "streamlit-echarts>=0.6.0",
+    "torchvision>=0.27.0",
+]
+
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_return_any = true
+no_implicit_optional = true
+
+[[tool.mypy.overrides]]
+module = ["streamlit", "streamlit.*", "streamlit_echarts"]
+ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "ruff>=0.15.14",
+]
